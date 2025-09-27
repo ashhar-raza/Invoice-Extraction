@@ -106,7 +106,7 @@ export default function App() {
       <SidebarProvider defaultOpen={true}>
         <div className="flex h-screen w-full">
           {/* Sidebar */}
-          <Sidebar className={`sidebar-gradient transition-all duration-400 flex-shrink-0 ${isSidebarOpen ? 'w-64' : 'w-16'}`}>
+         {!isMobile && <Sidebar className={`sidebar-gradient transition-all duration-400 flex-shrink-0 ${isSidebarOpen ? 'w-64' : 'w-16'}`}>
             <div className="flex justify-start px-3 py-2 lg:flex">
               <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                 {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -165,13 +165,13 @@ export default function App() {
                 </div>
               </SidebarFooter>
             )}
-          </Sidebar>
+          </Sidebar>}
 
           {/* Main Content */}
           {/* Main Content */}
           <div
-            className="flex-1 transition-all duration-300"
-            style={{ marginLeft: isSidebarOpen ? 64 : -180 }} // 256px = w-64, 64px = w-16
+            className="flex-1 transition-all duration-300 paddingLeft : 20px"
+            style={{ marginLeft: isSidebarOpen ? 20 : -200  }} // 256px = w-64, 64px = w-16
           >
             <div className="flex h-full flex-col">
               {/* Mobile Header */}
